@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <?php
   $page_title = 'Lista de proveedores';
   require_once('includes/load.php');
@@ -18,7 +19,7 @@
          </div>
         </div>
         <div class="panel-body">
-          <table class="table table-bordered">
+          <table class="table table-bordered" id="myTable2">
             <thead>
               <tr>
                 <th class="text-center" style="width: 50px;">#</th>
@@ -55,3 +56,34 @@
     </div>
   </div>
   <?php include_once('layouts/footer.php'); ?>
+
+<script type="text/javascript">
+
+  $(document).ready( function () {
+    $('#myTable2').DataTable({
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    }
+      })
+    ; 
+} );
+
+
+</script>
